@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableTurnr - Restaurant Management Made Simple</title>
+    <meta name="description" content="Turn data into profit with TableTurnr. Real-time restaurant analytics that increase revenue by 15-25% and save 3+ hours daily.">
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span class="logo-text">TableTurnr</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#demo" class="nav-link">Demo</a>
+                <button class="btn btn-primary nav-cta">Start Free Trial</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span>🚀 Trusted by 500+ restaurants</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Turn your restaurant data into
+                        <span class="gradient-text">profit</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Real-time insights that increase revenue by 25%, reduce costs by 20%, 
+                        and save 3+ hours daily. Built for busy restaurant managers who need results, not complexity.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">$50K+</div>
+                            <div class="stat-label">Avg. annual savings</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number">3hrs</div>
+                            <div class="stat-label">Daily time saved</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number">25%</div>
+                            <div class="stat-label">Revenue increase</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-ghost btn-large">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </button>
+                    </div>
+                    <div class="hero-proof">
+                        <div class="proof-text">No credit card required • 30-day free trial</div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-container">
+                        <div class="phone-shadow"></div>
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="app-screenshots/Sales view.png" alt="TableTurnr Dashboard" />
+                            </div>
+                            <div class="phone-reflection"></div>
+                        </div>
+                        <div class="floating-card card-1">
+                            <div class="card-icon">📈</div>
+                            <div class="card-content">
+                                <div class="card-value">+25%</div>
+                                <div class="card-label">Revenue Up</div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">⏱️</div>
+                            <div class="card-content">
+                                <div class="card-value">3hrs</div>
+                                <div class="card-label">Time Saved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-content">
+                <p class="trust-label">Trusted by restaurants worldwide</p>
+                <div class="trust-logos">
+                    <div class="trust-logo">🍕 Tony's Pizza</div>
+                    <div class="trust-logo">🍔 Burger Palace</div>
+                    <div class="trust-logo">🥗 Fresh Bistro</div>
+                    <div class="trust-logo">🍜 Noodle House</div>
+                    <div class="trust-logo">🥘 Spice Kitchen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Restaurant managers lose money every single day</h2>
+                <p class="section-subtitle">
+                    Without real-time insights, restaurants leak profit through hidden inefficiencies
+                </p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>3+ Hours Wasted Daily</h3>
+                    <p>Manual tracking of sales, inventory, and scheduling consumes time that could grow your business.</p>
+                    <div class="problem-impact">
+                        <span class="impact-label">Annual Impact:</span>
+                        <span class="impact-value">$16,425 lost</span>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-chart-line-down"></i>
+                    </div>
+                    <h3>Silent Profit Drains</h3>
+                    <p>Poor inventory control, wrong pricing, and overstaffing quietly steal 20-30% of potential profit.</p>
+                    <div class="problem-impact">
+                        <span class="impact-label">Annual Impact:</span>
+                        <span class="impact-value">$35,000+ lost</span>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-blind"></i>
+                    </div>
+                    <h3>Flying Blind</h3>
+                    <p>Weekly reports show what happened, not what's happening now. Problems cost thousands before you notice.</p>
+                    <div class="problem-impact">
+                        <span class="impact-label">Annual Impact:</span>
+                        <span class="impact-value">$25,000+ lost</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <div class="solution-badge">
+                        <span>✨ The Solution</span>
+                    </div>
+                    <h2 class="solution-title">
+                        One app. Complete restaurant control.
+                    </h2>
+                    <p class="solution-description">
+                        TableTurnr transforms scattered data into clear, actionable insights. 
+                        Make profitable decisions in seconds, not hours.
+                    </p>
+                    <div class="solution-features">
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text">
+                                <strong>Real-time analytics</strong> that update every minute
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text">
+                                <strong>AI recommendations</strong> that increase profit by 25%
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text">
+                                <strong>Smart inventory</strong> that prevents waste and stockouts
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text">
+                                <strong>Staff optimization</strong> that cuts labor costs by 15%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-visual">
+                    <div class="dashboard-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-tabs">
+                                <div class="tab active">Dashboard</div>
+                                <div class="tab">Analytics</div>
+                                <div class="tab">Inventory</div>
+                            </div>
+                        </div>
+                        <div class="mockup-content">
+                            <img src="app-screenshots/ai insights.png" alt="TableTurnr AI Insights" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+                <p class="section-subtitle">
+                    Built specifically for busy restaurant managers who need results, not complexity
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Real-Time Analytics</h3>
+                    </div>
+                    <p>Watch your restaurant's pulse with live sales, trends, and performance data that updates every minute.</p>
+                    <div class="feature-benefit">
+                        <div class="benefit-icon">💰</div>
+                        <span>Increase daily revenue by $200-500</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered Insights</h3>
+                    </div>
+                    <p>Get personalized recommendations for menu pricing, inventory levels, and staffing that boost profit.</p>
+                    <div class="feature-benefit">
+                        <div class="benefit-icon">📈</div>
+                        <span>25% average profit increase</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3>Smart Inventory</h3>
+                    </div>
+                    <p>Automated tracking with predictive alerts and one-tap reordering from your trusted suppliers.</p>
+                    <div class="feature-benefit">
+                        <div class="benefit-icon">⏰</div>
+                        <span>Save 2+ hours daily</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Staff Optimization</h3>
+                    </div>
+                    <p>Intelligent scheduling based on predicted demand and employee performance analytics.</p>
+                    <div class="feature-benefit">
+                        <div class="benefit-icon">💵</div>
+                        <span>Reduce labor costs by $3K-8K monthly</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-First Design</h3>
+                    </div>
+                    <p>Access critical insights anywhere, anytime. Built for managers who are always on the move.</p>
+                    <div class="feature-benefit">
+                        <div class="benefit-icon">⚡</div>
+                        <span>Instant access in 3 seconds</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Seamless Integration</h3>
+                    </div>
+                    <p>Connects instantly with Square, Toast, Clover, and all major POS systems. Setup in minutes.</p>
+                    <div class="feature-benefit">
+                        <div class="benefit-icon">🔄</div>
+                        <span>5-minute setup process</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <div class="calculator-content">
+                    <div class="calculator-header">
+                        <h2>Calculate Your Potential Savings</h2>
+                        <p>See exactly how much TableTurnr could save your restaurant</p>
+                    </div>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label>Monthly Revenue</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="revenue2" value="50000" placeholder="50,000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Staff</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="employees2" value="15" placeholder="15">
+                                <span class="input-suffix">people</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Food Cost Percentage</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="foodCost2" value="30" placeholder="30">
+                                <span class="input-suffix">%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <h3>Your Annual Savings Breakdown</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon">🗑️</div>
+                            <div class="result-content">
+                                <div class="result-label">Reduced Food Waste</div>
+                                <div class="result-value" id="foodWasteSavings2">$27,000</div>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">👥</div>
+                            <div class="result-content">
+                                <div class="result-label">Labor Optimization</div>
+                                <div class="result-value" id="laborSavings2">$21,600</div>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">⏱️</div>
+                            <div class="result-content">
+                                <div class="result-label">Time Savings</div>
+                                <div class="result-value" id="timeSavings2">$16,425</div>
+                            </div>
+                        </div>
+                        <div class="result-total">
+                            <div class="total-label">Total Annual Savings</div>
+                            <div class="total-value" id="totalSavings2">$65,025</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large calculator-cta">
+                        <span>Claim These Savings</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple pricing that scales with you</h2>
+                <p class="section-subtitle">Choose the plan that fits your restaurant's needs. Upgrade or downgrade anytime.</p>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <label for="pricing-toggle"></label>
+                </div>
+                <span class="toggle-label">
+                    Annual 
+                    <span class="toggle-discount">Save 20%</span>
+                </span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Perfect for single-location restaurants</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount monthly-price">99</span>
+                            <span class="price-amount annual-price">79</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>1 restaurant location</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Real-time analytics dashboard</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Basic inventory tracking</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Sales reporting & trends</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Email support</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-large">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p>For growing restaurants and small chains</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount monthly-price">249</span>
+                            <span class="price-amount annual-price">199</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 3 restaurant locations</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>AI insights & recommendations</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced inventory management</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Staff scheduling optimization</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Supplier integration & ordering</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Priority phone & email support</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>For restaurant groups and franchises</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount monthly-price">499</span>
+                            <span class="price-amount annual-price">399</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited restaurant locations</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Multi-location analytics & reporting</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom integrations & API access</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced reporting suite</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Dedicated account manager</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>24/7 priority support</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-large">Contact Sales</button>
+                </div>
+            </div>
+            <div class="pricing-guarantee">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-text">
+                    <strong>30-day money-back guarantee.</strong> No questions asked.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta">
+        <div class="cta-bg">
+            <div class="gradient-orb orb-4"></div>
+            <div class="gradient-orb orb-5"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to stop losing money?</h2>
+                <p class="cta-subtitle">
+                    Join 500+ restaurants already saving thousands with TableTurnr. 
+                    Start your free trial today – no credit card required.
+                </p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-ghost btn-large">
+                        <i class="fas fa-calendar"></i>
+                        <span>Schedule Demo</span>
+                    </button>
+                </div>
+                <div class="cta-proof">
+                    <div class="proof-items">
+                        <div class="proof-item">
+                            <i class="fas fa-check"></i>
+                            <span>30-day free trial</span>
+                        </div>
+                        <div class="proof-item">
+                            <i class="fas fa-check"></i>
+                            <span>No credit card required</span>
+                        </div>
+                        <div class="proof-item">
+                            <i class="fas fa-check"></i>
+                            <span>Setup in 5 minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🍽️</span>
+                        <span class="logo-text">TableTurnr</span>
+                    </div>
+                    <p>Restaurant management made simple</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#">Integrations</a>
+                        <a href="#">API</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Documentation</a>
+                        <a href="#">Case Studies</a>
+                        <a href="#">ROI Calculator</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Live Chat</a>
+                        <a href="#">Status</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 TableTurnr. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
