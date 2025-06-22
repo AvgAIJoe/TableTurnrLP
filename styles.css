@@ -127,6 +127,34 @@ p {
     align-items: center;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: #43e97b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+    box-shadow: 0 2px 8px rgba(67, 233, 123, 0.3);
+}
+
+.brand-text {
+    color: #43e97b;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
 .nav-brand h2 {
     color: #667eea;
     margin: 0;
@@ -1905,6 +1933,56 @@ p {
     
     .all-in-one-text h2 {
         font-size: 1.8rem;
+    }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .brand-text {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    
+    .nav-links .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        gap: 8px;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .brand-text {
+        font-size: 1.3rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
     }
 }
 
