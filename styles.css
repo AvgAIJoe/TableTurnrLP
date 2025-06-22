@@ -1338,88 +1338,30 @@ p {
 
 .all-in-one-visual {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.system-diagram {
+.orbital-diagram {
     position: relative;
     width: 500px;
     height: 500px;
     margin: 0 auto;
 }
 
-.module-circle {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    z-index: 3;
-}
-
-.module-circle:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.module-circle.inventory {
-    top: 50px;
-    left: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-.module-circle.analytics {
-    top: 50px;
-    right: 50px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: white;
-}
-
-.module-circle.orders {
-    bottom: 50px;
-    left: 50px;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
-}
-
-.module-circle.staffing {
-    bottom: 50px;
-    right: 50px;
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    color: white;
-}
-
-.module-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.module-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.ai-center {
+/* Central AI Hub */
+.ai-hub {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 10;
 }
 
 .ai-core {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 50%;
     display: flex;
@@ -1428,108 +1370,263 @@ p {
     justify-content: center;
     color: white;
     box-shadow: 
-        0 0 0 8px white,
-        0 15px 50px rgba(0, 0, 0, 0.2);
-    animation: pulse 2s ease-in-out infinite;
+        0 0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 0 12px rgba(102, 126, 234, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.15);
+    animation: pulse-hub 3s ease-in-out infinite;
+    position: relative;
 }
 
 .ai-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    animation: rotate-icon 6s linear infinite;
 }
 
 .ai-label {
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .ai-text {
-    display: block;
     font-size: 1.1rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #fff, #e2e8f0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-align: center;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.connection-line {
+/* Orbital Rings */
+.orbit-ring {
     position: absolute;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    height: 3px;
-    border-radius: 2px;
-    opacity: 0.6;
-    z-index: 2;
-}
-
-.connection-line::before {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #667eea;
+    border: 2px dotted rgba(102, 126, 234, 0.3);
     border-radius: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    animation: pulse-dot 2s ease-in-out infinite;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate-ring 20s linear infinite;
 }
 
-.line-1 {
-    width: 150px;
-    top: 130px;
-    left: 130px;
-    transform: rotate(-45deg);
-    transform-origin: center;
+.ring-1 {
+    width: 300px;
+    height: 300px;
+    animation-direction: normal;
 }
 
-.line-2 {
-    width: 150px;
-    top: 130px;
-    right: 130px;
-    transform: rotate(45deg);
-    transform-origin: center;
+.ring-2 {
+    width: 380px;
+    height: 380px;
+    animation-direction: reverse;
+    animation-duration: 30s;
 }
 
-.line-3 {
-    width: 150px;
-    bottom: 130px;
-    left: 130px;
-    transform: rotate(45deg);
-    transform-origin: center;
-}
-
-.line-4 {
-    width: 150px;
-    bottom: 130px;
-    right: 130px;
-    transform: rotate(-45deg);
-    transform-origin: center;
-}
-
-.sparkle {
+/* Orbit Container */
+.orbit-container {
     position: absolute;
-    font-size: 1.2rem;
-    animation: sparkle 3s ease-in-out infinite;
-    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: orbit-rotation 15s linear infinite;
 }
 
-.sparkle-1 {
-    top: 20px;
-    left: 200px;
+/* Orbital Modules */
+.orbital-module {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+}
+
+.module-1 {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(190px) rotate(0deg);
+}
+
+.module-2 {
+    transform: translate(-50%, -50%) rotate(90deg) translateX(190px) rotate(-90deg);
+}
+
+.module-3 {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(190px) rotate(-180deg);
+}
+
+.module-4 {
+    transform: translate(-50%, -50%) rotate(270deg) translateX(190px) rotate(-270deg);
+}
+
+.module-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.module-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.module-circle.inventory {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.module-circle.analytics {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.module-circle.orders {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.module-circle.staffing {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.module-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.module-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Dotted Connections */
+.dotted-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.dotted-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        to right,
+        rgba(102, 126, 234, 0.6) 0px,
+        rgba(102, 126, 234, 0.6) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+    transform-origin: 0 50%;
+    animation: pulse-line 2s ease-in-out infinite;
+}
+
+.line-to-inventory {
+    width: 190px;
+    transform: translate(0, -50%) rotate(0deg);
     animation-delay: 0s;
 }
 
-.sparkle-2 {
-    bottom: 30px;
-    right: 180px;
+.line-to-analytics {
+    width: 190px;
+    transform: translate(0, -50%) rotate(90deg);
+    animation-delay: 0.5s;
+}
+
+.line-to-orders {
+    width: 190px;
+    transform: translate(0, -50%) rotate(180deg);
     animation-delay: 1s;
 }
 
-.sparkle-3 {
-    top: 200px;
-    right: 20px;
+.line-to-staffing {
+    width: 190px;
+    transform: translate(0, -50%) rotate(270deg);
+    animation-delay: 1.5s;
+}
+
+/* Inter-module connections */
+.inter-connection {
+    position: absolute;
+    height: 1px;
+    background: repeating-linear-gradient(
+        to right,
+        rgba(102, 126, 234, 0.3) 0px,
+        rgba(102, 126, 234, 0.3) 6px,
+        transparent 6px,
+        transparent 12px
+    );
+    opacity: 0.7;
+}
+
+.conn-1-2 {
+    top: 40%;
+    right: 40%;
+    width: 134px;
+    transform: rotate(45deg);
+}
+
+.conn-2-3 {
+    bottom: 40%;
+    right: 40%;
+    width: 134px;
+    transform: rotate(135deg);
+}
+
+.conn-3-4 {
+    bottom: 40%;
+    left: 40%;
+    width: 134px;
+    transform: rotate(225deg);
+}
+
+.conn-4-1 {
+    top: 40%;
+    left: 40%;
+    width: 134px;
+    transform: rotate(315deg);
+}
+
+/* Floating Particles */
+.particle {
+    position: absolute;
+    font-size: 1rem;
+    animation: float-particle 4s ease-in-out infinite;
+    z-index: 3;
+    opacity: 0.7;
+}
+
+.particle-1 {
+    top: 15%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.particle-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.particle-3 {
+    bottom: 15%;
+    right: 25%;
     animation-delay: 2s;
+}
+
+.particle-4 {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 3s;
 }
 
 .all-in-one-text .section-badge {
@@ -1577,39 +1674,55 @@ p {
     font-size: 1.1rem;
 }
 
-@keyframes pulse {
+/* Orbital Animation Keyframes */
+@keyframes pulse-hub {
     0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
         box-shadow: 
-            0 0 0 8px white,
-            0 15px 50px rgba(0, 0, 0, 0.2);
+            0 0 0 6px rgba(255, 255, 255, 0.9),
+            0 0 0 12px rgba(102, 126, 234, 0.2),
+            0 20px 60px rgba(0, 0, 0, 0.15);
     }
     50% {
-        transform: translate(-50%, -50%) scale(1.05);
+        transform: scale(1.05);
         box-shadow: 
-            0 0 0 12px white,
-            0 20px 60px rgba(0, 0, 0, 0.25);
+            0 0 0 8px rgba(255, 255, 255, 0.9),
+            0 0 0 16px rgba(102, 126, 234, 0.3),
+            0 25px 70px rgba(0, 0, 0, 0.2);
     }
 }
 
-@keyframes pulse-dot {
+@keyframes rotate-icon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-ring {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit-rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-line {
     0%, 100% {
         opacity: 0.6;
-        transform: translateY(-50%) scale(1);
     }
     50% {
         opacity: 1;
-        transform: translateY(-50%) scale(1.2);
     }
 }
 
-@keyframes sparkle {
+@keyframes float-particle {
     0%, 100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.6;
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.7;
     }
     50% {
-        transform: scale(1.2) rotate(180deg);
+        transform: translateY(-20px) rotate(180deg);
         opacity: 1;
     }
 }
@@ -1622,31 +1735,58 @@ p {
         text-align: center;
     }
     
-    .system-diagram {
+    .orbital-diagram {
         width: 400px;
         height: 400px;
     }
     
+    .ai-core {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .ai-icon {
+        font-size: 2.2rem;
+    }
+    
+    .ai-text {
+        font-size: 1rem;
+    }
+    
     .module-circle {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
     
     .module-icon {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .module-label {
         font-size: 0.8rem;
     }
     
-    .ai-core {
-        width: 130px;
-        height: 130px;
+    .module-1, .module-2, .module-3, .module-4 {
+        transform: translate(-50%, -50%) rotate(var(--rotation)) translateX(150px) rotate(calc(-1 * var(--rotation)));
     }
     
-    .ai-icon {
-        font-size: 2rem;
+    .module-1 { --rotation: 0deg; }
+    .module-2 { --rotation: 90deg; }
+    .module-3 { --rotation: 180deg; }
+    .module-4 { --rotation: 270deg; }
+    
+    .ring-1 {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .ring-2 {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .line-to-inventory, .line-to-analytics, .line-to-orders, .line-to-staffing {
+        width: 150px;
     }
 }
 
@@ -1655,84 +1795,55 @@ p {
         padding: 60px 0;
     }
     
-    .system-diagram {
+    .orbital-diagram {
         width: 320px;
         height: 320px;
     }
     
-    .module-circle {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .module-circle.inventory {
-        top: 30px;
-        left: 30px;
-    }
-    
-    .module-circle.analytics {
-        top: 30px;
-        right: 30px;
-    }
-    
-    .module-circle.orders {
-        bottom: 30px;
-        left: 30px;
-    }
-    
-    .module-circle.staffing {
-        bottom: 30px;
-        right: 30px;
-    }
-    
-    .module-icon {
-        font-size: 1.2rem;
-        margin-bottom: 0.25rem;
-    }
-    
-    .module-label {
-        font-size: 0.7rem;
-    }
-    
     .ai-core {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
     }
     
     .ai-icon {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
     }
     
     .ai-text {
         font-size: 0.9rem;
     }
     
-    .connection-line {
-        height: 2px;
+    .module-circle {
+        width: 70px;
+        height: 70px;
     }
     
-    .line-1, .line-2, .line-3, .line-4 {
-        width: 100px;
+    .module-icon {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
     }
     
-    .line-1 {
-        top: 95px;
-        left: 95px;
+    .module-label {
+        font-size: 0.7rem;
     }
     
-    .line-2 {
-        top: 95px;
-        right: 95px;
+    .module-1, .module-2, .module-3, .module-4 {
+        transform: translate(-50%, -50%) rotate(var(--rotation)) translateX(125px) rotate(calc(-1 * var(--rotation)));
     }
     
-    .line-3 {
-        bottom: 95px;
-        left: 95px;
+    .ring-1 {
+        width: 200px;
+        height: 200px;
     }
     
-    .line-4 {
-        bottom: 95px;
-        right: 95px;
+    .ring-2 {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .line-to-inventory, .line-to-analytics, .line-to-orders, .line-to-staffing {
+        width: 125px;
     }
     
     .all-in-one-text h2 {
@@ -1741,37 +1852,59 @@ p {
 }
 
 @media (max-width: 480px) {
-    .system-diagram {
+    .orbital-diagram {
         width: 280px;
         height: 280px;
     }
     
-    .module-circle {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .module-circle.inventory,
-    .module-circle.analytics,
-    .module-circle.orders,
-    .module-circle.staffing {
-        top: 20px;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-    }
-    
     .ai-core {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .ai-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .ai-text {
+        font-size: 0.8rem;
+    }
+    
+    .module-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .module-icon {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .module-label {
+        font-size: 0.65rem;
+    }
+    
+    .module-1, .module-2, .module-3, .module-4 {
+        transform: translate(-50%, -50%) rotate(var(--rotation)) translateX(110px) rotate(calc(-1 * var(--rotation)));
+    }
+    
+    .ring-1 {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .ring-2 {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .line-to-inventory, .line-to-analytics, .line-to-orders, .line-to-staffing {
+        width: 110px;
     }
     
     .all-in-one-text h2 {
         font-size: 1.8rem;
-    }
-    
-    .line-1, .line-2, .line-3, .line-4 {
-        width: 80px;
     }
 }
 
