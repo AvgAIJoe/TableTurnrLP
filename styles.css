@@ -1443,22 +1443,15 @@ p {
     line-height: 1.2;
 }
 
-.powered-by {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 500;
-    opacity: 0.8;
-    letter-spacing: 1px;
-}
-
 .ai-text {
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     background: linear-gradient(45deg, #fff, #e2e8f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
 }
 
 .connection-line {
@@ -1483,33 +1476,33 @@ p {
 }
 
 .line-1 {
-    width: 120px;
-    top: 140px;
-    left: 140px;
+    width: 150px;
+    top: 130px;
+    left: 130px;
     transform: rotate(-45deg);
     transform-origin: center;
 }
 
 .line-2 {
-    width: 120px;
-    top: 140px;
-    right: 140px;
+    width: 150px;
+    top: 130px;
+    right: 130px;
     transform: rotate(45deg);
     transform-origin: center;
 }
 
 .line-3 {
-    width: 120px;
-    bottom: 140px;
-    left: 140px;
+    width: 150px;
+    bottom: 130px;
+    left: 130px;
     transform: rotate(45deg);
     transform-origin: center;
 }
 
 .line-4 {
-    width: 120px;
-    bottom: 140px;
-    right: 140px;
+    width: 150px;
+    bottom: 130px;
+    right: 130px;
     transform: rotate(-45deg);
     transform-origin: center;
 }
@@ -1708,10 +1701,6 @@ p {
     
     .ai-icon {
         font-size: 1.5rem;
-    }
-    
-    .powered-by {
-        font-size: 0.6rem;
     }
     
     .ai-text {
