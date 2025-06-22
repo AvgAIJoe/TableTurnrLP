@@ -50,17 +50,93 @@
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large">Get Free Demo</button>
+                        <button class="btn btn-primary btn-large" onclick="openDemoForm()">Request Demo</button>
                         <button class="btn btn-secondary btn-large">Watch Video</button>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="phone-mockup">
-                        <div class="screen">
-                            <img src="app-screenshots/Sales view.png" alt="TableTurnr Dashboard" />
+                    <div class="hero-phone-mockup">
+                        <div class="phone-frame">
+                            <img src="app-screenshots/Sales view.png" alt="TableTurnr Sales Dashboard" />
+                        </div>
+                        <div class="floating-badge revenue-badge">
+                            <span class="badge-icon">📈</span>
+                            <div class="badge-content">
+                                <span class="badge-value">+25%</span>
+                                <span class="badge-label">Revenue Up</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge time-badge">
+                            <span class="badge-icon">⏱️</span>
+                            <div class="badge-content">
+                                <span class="badge-value">3hrs</span>
+                                <span class="badge-label">Time Saved</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day in the Life Section -->
+    <section class="day-in-life">
+        <div class="container">
+            <h2>A Restaurant Manager's Daily Struggle</h2>
+            <p class="section-subtitle">See how TableTurnr transforms your entire day</p>
+            <div class="day-comparison-table">
+                <div class="table-header">
+                    <div class="time-column">Time</div>
+                    <div class="problem-column">Without TableTurnr</div>
+                    <div class="solution-column">With TableTurnr</div>
+                </div>
+                <div class="table-row">
+                    <div class="time-cell">6:00 AM</div>
+                    <div class="problem-cell">
+                        <i class="fas fa-times-circle"></i>
+                        Checking yesterday's sales in 3 different systems
+                    </div>
+                    <div class="solution-cell">
+                        <i class="fas fa-check-circle"></i>
+                        One dashboard shows everything instantly
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="time-cell">11:00 AM</div>
+                    <div class="problem-cell">
+                        <i class="fas fa-times-circle"></i>
+                        Manually counting inventory before lunch rush
+                    </div>
+                    <div class="solution-cell">
+                        <i class="fas fa-check-circle"></i>
+                        Real-time inventory tracking with alerts
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="time-cell">2:00 PM</div>
+                    <div class="problem-cell">
+                        <i class="fas fa-times-circle"></i>
+                        Calling suppliers to place urgent orders
+                    </div>
+                    <div class="solution-cell">
+                        <i class="fas fa-check-circle"></i>
+                        One-tap ordering from integrated suppliers
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="time-cell">5:00 PM</div>
+                    <div class="problem-cell">
+                        <i class="fas fa-times-circle"></i>
+                        Scrambling to adjust tonight's schedule
+                    </div>
+                    <div class="solution-cell">
+                        <i class="fas fa-check-circle"></i>
+                        AI-optimized schedules based on demand
+                    </div>
+                </div>
+            </div>
+            <div class="day-in-life-cta">
+                <button class="btn btn-primary btn-large">See TableTurnr in Action</button>
             </div>
         </div>
     </section>
@@ -69,21 +145,34 @@
     <section class="problem">
         <div class="container">
             <h2>Restaurant Managers Are Losing Money Every Day</h2>
+            <p class="section-subtitle">Without real-time insights, restaurants leak profit through hidden inefficiencies</p>
             <div class="problem-grid">
                 <div class="problem-item">
                     <i class="fas fa-clock text-red"></i>
                     <h3>3+ Hours Daily Wasted</h3>
                     <p>Manual tracking of sales, inventory, and staff scheduling eats up valuable time that could be spent growing your business.</p>
+                    <div class="problem-impact">
+                        <span class="impact-label">Annual Impact:</span>
+                        <span class="impact-value">$16,425 lost</span>
+                    </div>
                 </div>
                 <div class="problem-item">
                     <i class="fas fa-chart-line-down text-red"></i>
                     <h3>Hidden Profit Leaks</h3>
-                    <p>Without real-time insights, restaurants lose 15-30% potential profit through poor menu pricing, overstaffing, and food waste.</p>
+                    <p>Poor inventory control, wrong pricing, and overstaffing quietly steal 20-30% of potential profit.</p>
+                    <div class="problem-impact">
+                        <span class="impact-label">Annual Impact:</span>
+                        <span class="impact-value">$35,000+ lost</span>
+                    </div>
                 </div>
                 <div class="problem-item">
                     <i class="fas fa-exclamation-triangle text-red"></i>
-                    <h3>Reactive Decision Making</h3>
-                    <p>By the time you notice problems in weekly reports, you've already lost thousands in revenue and wasted inventory.</p>
+                    <h3>Flying Blind</h3>
+                    <p>Weekly reports show what happened, not what's happening now. Problems cost thousands before you notice.</p>
+                    <div class="problem-impact">
+                        <span class="impact-label">Annual Impact:</span>
+                        <span class="impact-value">$25,000+ lost</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,7 +194,43 @@
                     </ul>
                 </div>
                 <div class="solution-image">
-                    <img src="app-screenshots/ai insights.png" alt="AI Insights Dashboard" />
+                    <div class="solution-visual-large">
+                        <div class="restaurant-context-image">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Busy Restaurant Manager" />
+                        </div>
+                        <div class="app-showcase">
+                            <div class="app-screenshot-large">
+                                <img src="app-screenshots/ai insights.png" alt="AI Insights Dashboard" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <h3>Trusted by restaurants worldwide</h3>
+            <div class="trust-content">
+                <div class="restaurant-types">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&q=80" alt="Pizza Restaurant" />
+                        <span>Pizza Places</span>
+                    </div>
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1428515613728-6b4607e44363?w=300&q=80" alt="Fine Dining" />
+                        <span>Fine Dining</span>
+                    </div>
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=300&q=80" alt="Cafe" />
+                        <span>Cafes & Bistros</span>
+                    </div>
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&q=80" alt="Fast Casual" />
+                        <span>Fast Casual</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,65 +240,216 @@
     <section id="features" class="features">
         <div class="container">
             <h2>Everything You Need in One Place</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
+            <p class="section-subtitle">Built specifically for busy restaurant managers who need results, not complexity</p>
+            
+            <!-- Feature Navigation Tabs -->
+            <div class="feature-tabs">
+                <button class="tab-button active" data-tab="overview">Overview</button>
+                <button class="tab-button" data-tab="operations">Operations</button>
+                <button class="tab-button" data-tab="analytics">Analytics</button>
+                <button class="tab-button" data-tab="integrations">Integrations</button>
+            </div>
+            
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Real-Time Analytics</h3>
+                        <p>See your sales, trends, and performance metrics update live throughout the day.</p>
+                        <div class="feature-benefit">
+                            <strong>Result:</strong> Make informed decisions that increase daily revenue by $200-500
+                        </div>
                     </div>
-                    <h3>Real-Time Analytics</h3>
-                    <p>See your sales, trends, and performance metrics update live throughout the day.</p>
-                    <div class="feature-benefit">
-                        <strong>Result:</strong> Make informed decisions that increase daily revenue by $200-500
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Powered Insights</h3>
+                        <p>Get personalized recommendations for menu pricing, inventory, and staffing optimization.</p>
+                        <div class="feature-benefit">
+                            <strong>Result:</strong> Reduce food waste by 20% and optimize labor costs by 15%
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3>Smart Inventory</h3>
+                        <p>Automated tracking with low-stock alerts and one-tap reordering from trusted suppliers.</p>
+                        <div class="feature-benefit">
+                            <strong>Result:</strong> Save 2+ hours daily and prevent costly stockouts
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Staff Scheduling</h3>
+                        <p>Optimize schedules based on predicted demand and employee performance data.</p>
+                        <div class="feature-benefit">
+                            <strong>Result:</strong> Reduce labor costs by $3,000-8,000 monthly
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-First Design</h3>
+                        <p>Built for busy managers who need critical information while on the floor.</p>
+                        <div class="feature-benefit">
+                            <strong>Result:</strong> Access insights anywhere, anytime, in seconds
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>POS Integration</h3>
+                        <p>Seamlessly connects with Square, Toast, Clover, and other popular POS systems.</p>
+                        <div class="feature-benefit">
+                            <strong>Result:</strong> Setup in minutes, not hours
+                        </div>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
+            </div>
+            
+            <!-- Operations Tab -->
+            <div class="tab-content" id="operations">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Inventory Management</h3>
+                        <p>Real-time tracking with automatic reorder points and supplier integration.</p>
+                        <div class="feature-benefit">
+                            <strong>Benefit:</strong> Reduce waste by 20% and prevent stockouts
+                        </div>
                     </div>
-                    <h3>AI-Powered Insights</h3>
-                    <p>Get personalized recommendations for menu pricing, inventory, and staffing optimization.</p>
-                    <div class="feature-benefit">
-                        <strong>Result:</strong> Reduce food waste by 20% and optimize labor costs by 15%
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Smart Scheduling</h3>
+                        <p>AI-powered staff scheduling based on sales forecasts and employee performance.</p>
+                        <div class="feature-benefit">
+                            <strong>Benefit:</strong> Optimize labor costs and improve service quality
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Supplier Ordering</h3>
+                        <p>One-tap ordering from trusted suppliers with automated reorder recommendations.</p>
+                        <div class="feature-benefit">
+                            <strong>Benefit:</strong> Save 2+ hours daily on procurement tasks
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Menu Engineering</h3>
+                        <p>Analyze menu item performance and optimize pricing for maximum profitability.</p>
+                        <div class="feature-benefit">
+                            <strong>Benefit:</strong> Increase menu profitability by 15-25%
+                        </div>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-boxes"></i>
+            </div>
+            
+            <!-- Analytics Tab -->
+            <div class="tab-content" id="analytics">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Sales Analytics</h3>
+                        <p>Comprehensive sales reporting with trend analysis and forecasting.</p>
+                        <div class="feature-benefit">
+                            <strong>Insight:</strong> Identify peak hours and optimize staffing
+                        </div>
                     </div>
-                    <h3>Smart Inventory</h3>
-                    <p>Automated tracking with low-stock alerts and one-tap reordering from trusted suppliers.</p>
-                    <div class="feature-benefit">
-                        <strong>Result:</strong> Save 2+ hours daily and prevent costly stockouts
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Profit Analysis</h3>
+                        <p>Track margins, food costs, and labor efficiency in real-time.</p>
+                        <div class="feature-benefit">
+                            <strong>Insight:</strong> Spot profit leaks before they impact your bottom line
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Performance Metrics</h3>
+                        <p>Monitor table turnover, service times, and customer satisfaction.</p>
+                        <div class="feature-benefit">
+                            <strong>Insight:</strong> Optimize operations for better customer experience
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Predictive Analytics</h3>
+                        <p>AI-powered forecasting for sales, inventory needs, and staffing requirements.</p>
+                        <div class="feature-benefit">
+                            <strong>Insight:</strong> Stay ahead of demand with data-driven planning
+                        </div>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+            </div>
+            
+            <!-- Integrations Tab -->
+            <div class="tab-content" id="integrations">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cash-register"></i>
+                        </div>
+                        <h3>POS Systems</h3>
+                        <p>Seamless integration with Square, Toast, Clover, and other major POS systems.</p>
+                        <div class="feature-benefit">
+                            <strong>Setup:</strong> 5-minute integration process
+                        </div>
                     </div>
-                    <h3>Staff Scheduling</h3>
-                    <p>Optimize schedules based on predicted demand and employee performance data.</p>
-                    <div class="feature-benefit">
-                        <strong>Result:</strong> Reduce labor costs by $3,000-8,000 monthly
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Supplier Networks</h3>
+                        <p>Direct integration with Restaurant Depot, US Foods, Sysco, and local suppliers.</p>
+                        <div class="feature-benefit">
+                            <strong>Feature:</strong> Compare prices and place orders instantly
+                        </div>
                     </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Payment Processing</h3>
+                        <p>Works with all major payment processors and delivery platforms.</p>
+                        <div class="feature-benefit">
+                            <strong>Benefit:</strong> Unified view of all revenue streams
+                        </div>
                     </div>
-                    <h3>Mobile-First Design</h3>
-                    <p>Built for busy managers who need critical information while on the floor.</p>
-                    <div class="feature-benefit">
-                        <strong>Result:</strong> Access insights anywhere, anytime, in seconds
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3>POS Integration</h3>
-                    <p>Seamlessly connects with Square, Toast, Clover, and other popular POS systems.</p>
-                    <div class="feature-benefit">
-                        <strong>Result:</strong> Setup in minutes, not hours
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Backup</h3>
+                        <p>Automatic data backup and synchronization across all devices.</p>
+                        <div class="feature-benefit">
+                            <strong>Security:</strong> Never lose important business data
+                        </div>
                     </div>
                 </div>
             </div>
@@ -306,8 +582,7 @@
                 <h2>Ready to Turn Your Data Into Profit?</h2>
                 <p>Join hundreds of restaurants already saving thousands with TableTurnr</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary btn-large">Start Free Trial</button>
-                    <button class="btn btn-secondary btn-large">Schedule Demo</button>
+                    <button class="btn btn-primary btn-large" onclick="openDemoForm()">Request Demo</button>
                 </div>
                 <div class="cta-guarantee">
                     <i class="fas fa-shield-alt"></i>
