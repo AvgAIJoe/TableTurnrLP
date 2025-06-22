@@ -1412,6 +1412,9 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ai-core {
@@ -1480,31 +1483,35 @@ p {
 }
 
 .line-1 {
-    width: 140px;
-    top: 125px;
-    left: 125px;
+    width: 120px;
+    top: 140px;
+    left: 140px;
     transform: rotate(-45deg);
+    transform-origin: center;
 }
 
 .line-2 {
-    width: 140px;
-    top: 125px;
-    right: 125px;
+    width: 120px;
+    top: 140px;
+    right: 140px;
     transform: rotate(45deg);
+    transform-origin: center;
 }
 
 .line-3 {
-    width: 140px;
-    bottom: 125px;
-    left: 125px;
+    width: 120px;
+    bottom: 140px;
+    left: 140px;
     transform: rotate(45deg);
+    transform-origin: center;
 }
 
 .line-4 {
-    width: 140px;
-    bottom: 125px;
-    right: 125px;
+    width: 120px;
+    bottom: 140px;
+    right: 140px;
     transform: rotate(-45deg);
+    transform-origin: center;
 }
 
 .sparkle {
