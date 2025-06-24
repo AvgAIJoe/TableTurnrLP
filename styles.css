@@ -1481,6 +1481,19 @@ p {
     transform: translate(-50%, -50%) rotate(270deg) translateX(190px) rotate(-270deg);
 }
 
+/* Add counter-rotation to each module circle to keep text horizontal */
+.module-1 .module-circle,
+.module-2 .module-circle,
+.module-3 .module-circle,
+.module-4 .module-circle {
+    animation: counter-orbit 15s linear infinite;
+}
+
+@keyframes counter-orbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
 .module-circle {
     width: 110px;
     height: 110px;
@@ -1755,6 +1768,7 @@ p {
     }
 }
 
+
 /* Responsive Design for All-in-One Section */
 @media (max-width: 1024px) {
     .all-in-one-content {
@@ -1802,6 +1816,7 @@ p {
     .module-2 { --rotation: 90deg; }
     .module-3 { --rotation: 180deg; }
     .module-4 { --rotation: 270deg; }
+    
     
     .ring-1 {
         width: 240px;
