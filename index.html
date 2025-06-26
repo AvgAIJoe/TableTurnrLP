@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -16,14 +17,16 @@
             <div class="nav-brand">
                 <div class="logo-container">
                     <div class="logo-icon">TT</div>
-                    <h2 class="brand-text">TableTurnr</h2>
+                    <div class="brand-content">
+                        <h2 class="brand-text">TableTurnr</h2>
+                        <p class="brand-tagline">Restaurant Management Made Simple</p>
+                    </div>
                 </div>
             </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-                <button class="btn btn-primary">Request Demo</button>
+                <a href="#asktt">Ask TT</a>
+                <button class="btn btn-primary" onclick="openCalendly()">Request Demo</button>
             </div>
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -36,7 +39,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Turn Data Into Profit</h1>
+                    <h1>Turn Restaurant Data Into Profit</h1>
                     <p class="hero-subtitle">Restaurant management made simple with real-time insights that increase revenue by 15-25% and save 3+ hours daily.</p>
                     <div class="hero-stats">
                         <div class="stat">
@@ -53,7 +56,7 @@
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large" onclick="openDemoForm()">Request Demo</button>
+                        <button class="btn btn-primary btn-large" onclick="openCalendly()">Request Demo</button>
                         <button class="btn btn-secondary btn-large">Watch Video</button>
                     </div>
                 </div>
@@ -566,121 +569,44 @@
         </div>
     </section>
 
-    <!-- ROI Calculator -->
-    <section class="roi-calculator">
+    <!-- Ask TT Section -->
+    <section id="asktt" class="asktt-section">
         <div class="container">
-            <h2>See Your Potential Savings</h2>
-            <p>Calculate how much TableTurnr could save your restaurant</p>
-            <div class="calculator">
-                <div class="calculator-inputs">
-                    <div class="input-group">
-                        <label>Monthly Revenue</label>
-                        <input type="number" id="revenue" placeholder="50000" value="50000">
+            <div class="asktt-content">
+                <div class="asktt-text">
+                    <h1 class="asktt-title">Ask TT</h1>
+                    <h2 class="asktt-subtitle">AI Chatbot for your restaurant</h2>
+                    <p class="asktt-description">Get instant answers to all your restaurant management questions. From inventory insights to staff scheduling, Ask TT provides AI-powered guidance tailored to your specific needs.</p>
+                </div>
+                
+                <div class="asktt-phones-section">
+                    <div class="exciting-badge">
+                        <span class="exciting-text">EXCITING NEW FEATURE</span>
+                        <div class="sparkles">
+                            <span class="sparkle">🔥</span>
+                            <span class="sparkle">💥</span>
+                            <span class="sparkle">✨</span>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label>Number of Employees</label>
-                        <input type="number" id="employees" placeholder="15" value="15">
-                    </div>
-                    <div class="input-group">
-                        <label>Food Cost %</label>
-                        <input type="number" id="foodCost" placeholder="30" value="30">
+                    
+                    <div class="asktt-phones">
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="app-screenshots/AskTT.png" alt="Ask TT Interface" class="screenshot-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="app-screenshots/Ask TT Response.png" alt="Ask TT AI Response" class="screenshot-image">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="calculator-results">
-                    <h3>Your Potential Annual Savings</h3>
-                    <div class="savings-breakdown">
-                        <div class="saving-item">
-                            <span>Reduced Food Waste (15%)</span>
-                            <strong id="foodWasteSavings">$27,000</strong>
-                        </div>
-                        <div class="saving-item">
-                            <span>Labor Optimization (12%)</span>
-                            <strong id="laborSavings">$21,600</strong>
-                        </div>
-                        <div class="saving-item">
-                            <span>Time Savings (3hrs/day)</span>
-                            <strong id="timeSavings">$16,425</strong>
-                        </div>
-                        <div class="saving-item total">
-                            <span>Total Annual Savings</span>
-                            <strong id="totalSavings">$65,025</strong>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary">Get These Savings</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Simple, Transparent Pricing</h2>
-            <p>Choose the plan that fits your restaurant's needs</p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">99</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p>Perfect for single-location restaurants</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 1 location</li>
-                        <li><i class="fas fa-check"></i> Real-time analytics dashboard</li>
-                        <li><i class="fas fa-check"></i> Basic inventory tracking</li>
-                        <li><i class="fas fa-check"></i> Sales reporting</li>
-                        <li><i class="fas fa-check"></i> Email support</li>
-                    </ul>
-                    <button class="btn btn-outline">Start Free Trial</button>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Professional</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">249</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p>For growing restaurants and small chains</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Up to 3 locations</li>
-                        <li><i class="fas fa-check"></i> AI insights & recommendations</li>
-                        <li><i class="fas fa-check"></i> Advanced inventory management</li>
-                        <li><i class="fas fa-check"></i> Staff scheduling optimization</li>
-                        <li><i class="fas fa-check"></i> Supplier integration</li>
-                        <li><i class="fas fa-check"></i> Phone + email support</li>
-                    </ul>
-                    <button class="btn btn-primary">Start Free Trial</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Enterprise</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">499</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p>For restaurant groups and franchises</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Unlimited locations</li>
-                        <li><i class="fas fa-check"></i> Multi-location analytics</li>
-                        <li><i class="fas fa-check"></i> Custom integrations</li>
-                        <li><i class="fas fa-check"></i> Advanced reporting suite</li>
-                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
-                    </ul>
-                    <button class="btn btn-outline">Contact Sales</button>
-                </div>
-            </div>
-            <div class="pricing-note">
-                <p>All plans include a 30-day free trial. No credit card required.</p>
             </div>
         </div>
     </section>
@@ -689,14 +615,53 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Turn Your Data Into Profit?</h2>
-                <p>Join hundreds of restaurants already saving thousands with TableTurnr</p>
+                <h2>Ready to Turn Restaurant Data Into Profit?</h2>
+                <p>Get onboarded to the revolutionary restaurant management platform powered by AI</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary btn-large" onclick="openDemoForm()">Request Demo</button>
+                    <button class="btn btn-primary btn-large" onclick="openCalendly()">Request Demo</button>
                 </div>
-                <div class="cta-guarantee">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>30-day money-back guarantee</span>
+                <div class="cta-badges">
+                    <div class="badge-item">
+                        <div class="badge-container">
+                            <div class="made-in-usa-logo">
+                                <div class="usa-flag">
+                                    <div class="flag-stars">
+                                        <span>★</span><span>★</span><span>★</span><span>★</span>
+                                        <span>★</span><span>★</span><span>★</span><span>★</span>
+                                        <span>★</span><span>★</span><span>★</span><span>★</span>
+                                    </div>
+                                    <div class="flag-stripes">
+                                        <div class="stripe red"></div>
+                                        <div class="stripe white"></div>
+                                        <div class="stripe red"></div>
+                                        <div class="stripe white"></div>
+                                        <div class="stripe red"></div>
+                                        <div class="stripe white"></div>
+                                        <div class="stripe red"></div>
+                                    </div>
+                                </div>
+                                <div class="usa-text">
+                                    <span class="made-text">MADE IN</span>
+                                    <span class="usa-text-large">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-container">
+                            <div class="lehigh-valley-logo">
+                                <div class="lv-circle">
+                                    <div class="lv-mountains"></div>
+                                    <div class="lv-river"></div>
+                                    <div class="lv-trees"></div>
+                                </div>
+                                <div class="lv-text">
+                                    <span class="made-in-text">MADE IN</span>
+                                    <span class="location-text">LEHIGH VALLEY, PA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -707,32 +672,47 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>TableTurnr</h3>
-                    <p>Restaurant management made simple</p>
+                    <div class="footer-logo">
+                        <div class="logo-icon">TT</div>
+                        <h3 class="brand-text">TableTurnr</h3>
+                    </div>
+                    <p class="footer-tagline">Restaurant management made simple</p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lehigh Valley, PA</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:lightspeed.insights@gmail.com">lightspeed.insights@gmail.com</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Product</h4>
-                        <a href="#">Features</a>
-                        <a href="#">Pricing</a>
-                        <a href="#">Integrations</a>
+                        <a href="#features">Features</a>
+                        <a href="#asktt">Ask TT</a>
+                        <a href="#" onclick="openCalendly()">Request Demo</a>
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
-                        <a href="#">About</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Careers</a>
+                        <a href="#about">About</a>
+                        <a href="#" onclick="showTeamPage()">Team</a>
+                        <a href="#" onclick="showBlogPage()">Blog</a>
                     </div>
                     <div class="footer-column">
                         <h4>Support</h4>
                         <a href="#">Help Center</a>
-                        <a href="#">Contact</a>
+                        <a href="mailto:lightspeed.insights@gmail.com">Contact</a>
                         <a href="#">Status</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 TableTurnr. All rights reserved.</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Lightspeed Analytics Labs Inc. All rights reserved.</p>
+                </div>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -740,6 +720,87 @@
             </div>
         </div>
     </footer>
+
+    <!-- Hidden Team Page -->
+    <div id="team-page" class="modal-page" style="display: none;">
+        <div class="modal-overlay" onclick="hidePages()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Meet Our Team</h2>
+                <button class="close-btn" onclick="hidePages()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="section-subtitle">The visionaries behind TableTurnr's restaurant revolution</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Chandan</h3>
+                            <p class="member-title">Founder & CEO</p>
+                            <p class="member-bio">Experienced technology leader with a passion for transforming restaurant operations through data-driven insights. With extensive background in software engineering and business analytics, Chandan identified the critical need for unified restaurant management solutions and founded TableTurnr to bridge the gap between complex data and actionable business intelligence.</p>
+                            <div class="member-links">
+                                <a href="https://www.linkedin.com/in/chandan2024/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Aasis Yadav</h3>
+                            <p class="member-title">Co-Founder & CTO</p>
+                            <p class="member-bio">Technical visionary and software architect with deep expertise in building scalable systems for the hospitality industry. Aasis brings years of experience in developing robust platforms that handle real-time data processing and AI-powered analytics, making TableTurnr's advanced features possible through innovative engineering solutions.</p>
+                            <div class="member-links">
+                                <a href="https://www.linkedin.com/in/aasis-yadav/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Blog Page -->
+    <div id="blog-page" class="modal-page" style="display: none;">
+        <div class="modal-overlay" onclick="hidePages()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>From Our Blog</h2>
+                <button class="close-btn" onclick="hidePages()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="section-subtitle">Insights and tips for restaurant success</p>
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <div class="post-header">
+                            <div class="post-category">Restaurant Management</div>
+                            <h3>How TableTurnr Transforms Restaurant Operations: A Complete Guide</h3>
+                            <p class="post-meta">5 min read • Dec 2024</p>
+                        </div>
+                        <div class="post-content">
+                            <p>Running a successful restaurant requires juggling countless moving parts - from inventory management and staff scheduling to sales tracking and customer satisfaction. Traditional methods often leave managers overwhelmed, reactive rather than proactive, and missing critical opportunities for growth.</p>
+                            <p>TableTurnr revolutionizes this approach by providing restaurant managers with real-time insights that turn data into actionable decisions. Here's how our platform addresses the most pressing challenges facing today's restaurant industry:</p>
+                            <h4>1. Real-Time Inventory Control</h4>
+                            <p>Stop running out of your best-selling items. TableTurnr's smart inventory system tracks usage patterns, predicts demand, and automatically alerts you when it's time to reorder - saving both time and money.</p>
+                            <h4>2. AI-Powered Staff Optimization</h4>
+                            <p>Our intelligent scheduling system analyzes historical data, weather patterns, and local events to recommend optimal staffing levels, reducing labor costs by up to 15% while maintaining excellent service quality.</p>
+                            <h4>3. Profit Visibility</h4>
+                            <p>See exactly where your money is going and coming from. Track food costs, monitor waste, and identify your most profitable menu items in real-time, not weeks later.</p>
+                            <p>Restaurant managers using TableTurnr report saving 3+ hours daily on administrative tasks while increasing profits by 15-25%. The platform pays for itself within the first month through improved efficiency and reduced waste.</p>
+                            <p>Ready to transform your restaurant operations? <a href="#" onclick="openCalendly()">Schedule a demo</a> to see TableTurnr in action.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

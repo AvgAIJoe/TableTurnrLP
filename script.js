@@ -122,333 +122,65 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Form submission handlers
-document.querySelectorAll('.btn-primary').forEach(button => {
-    if (button.textContent.includes('Demo') || button.textContent.includes('Trial')) {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Create a simple modal or redirect to a signup form
-            const modal = createModal();
-            document.body.appendChild(modal);
+// Button handlers now use Calendly integration
+
+// Calendly Integration Function
+function openCalendly() {
+    // Load Calendly widget script if not already loaded
+    if (!window.Calendly) {
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+            openCalendlyWidget();
+        };
+    } else {
+        openCalendlyWidget();
+    }
+}
+
+function openCalendlyWidget() {
+    // TableTurnr demo scheduling link
+    const calendlyUrl = 'https://calendly.com/lightspeed-insights/30min';
+    
+    if (window.Calendly) {
+        window.Calendly.initPopupWidget({
+            url: calendlyUrl
         });
+    } else {
+        // Fallback: open in new window
+        window.open(calendlyUrl, '_blank', 'width=800,height=600');
+    }
+}
+
+// Old form modal removed - now using Calendly integration
+
+// Modal page functions for Team and Blog
+function showTeamPage() {
+    document.getElementById('team-page').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function showBlogPage() {
+    document.getElementById('blog-page').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function hidePages() {
+    document.getElementById('team-page').style.display = 'none';
+    document.getElementById('blog-page').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        hidePages();
     }
 });
 
-// Google Forms Integration Function
-function openDemoForm() {
-    const modal = createDemoModal();
-    document.body.appendChild(modal);
-}
-
-function createDemoModal() {
-    const modalHTML = `
-        <div class="modal-overlay" style="
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-        ">
-            <div class="modal-content" style="
-                background: white;
-                padding: 2rem;
-                border-radius: 16px;
-                max-width: 500px;
-                width: 90%;
-                position: relative;
-                max-height: 90vh;
-                overflow-y: auto;
-            ">
-                <button class="modal-close" style="
-                    position: absolute;
-                    top: 1rem;
-                    right: 1rem;
-                    background: none;
-                    border: none;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    z-index: 10;
-                ">&times;</button>
-                
-                <h3 style="margin-bottom: 1rem; color: #333; font-size: 1.5rem;">Request Your TableTurnr Demo</h3>
-                <p style="margin-bottom: 2rem; color: #666; line-height: 1.5;">
-                    See how TableTurnr can save your restaurant thousands of dollars. Fill out the form below and we'll schedule a personalized demo for you.
-                </p>
-                
-                <form class="demo-form" id="googleForm">
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Restaurant Name *</label>
-                        <input type="text" name="restaurant_name" placeholder="e.g., Tony's Italian Bistro" required style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                        ">
-                    </div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Your Name *</label>
-                        <input type="text" name="contact_name" placeholder="e.g., John Smith" required style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                        ">
-                    </div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Email Address *</label>
-                        <input type="email" name="email" placeholder="e.g., john@restaurant.com" required style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                        ">
-                    </div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Phone Number *</label>
-                        <input type="tel" name="phone" placeholder="e.g., (555) 123-4567" required style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                        ">
-                    </div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Number of Locations *</label>
-                        <select name="locations" required style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                        ">
-                            <option value="">Select number of locations</option>
-                            <option value="1">1 Location</option>
-                            <option value="2-3">2-3 Locations</option>
-                            <option value="4-10">4-10 Locations</option>
-                            <option value="10+">10+ Locations</option>
-                        </select>
-                    </div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Monthly Revenue (Optional)</label>
-                        <select name="revenue" style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                        ">
-                            <option value="">Select monthly revenue</option>
-                            <option value="under-25k">Under $25,000</option>
-                            <option value="25k-50k">$25,000 - $50,000</option>
-                            <option value="50k-100k">$50,000 - $100,000</option>
-                            <option value="100k-250k">$100,000 - $250,000</option>
-                            <option value="250k+">$250,000+</option>
-                        </select>
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">What's your biggest challenge? (Optional)</label>
-                        <textarea name="challenge" placeholder="e.g., Managing inventory, reducing food waste, staff scheduling..." style="
-                            width: 100%;
-                            padding: 12px;
-                            border: 2px solid #e5e7eb;
-                            border-radius: 8px;
-                            font-size: 1rem;
-                            box-sizing: border-box;
-                            height: 80px;
-                            resize: vertical;
-                        "></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="
-                        width: 100%;
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                        color: white;
-                        padding: 15px 24px;
-                        border: none;
-                        border-radius: 8px;
-                        font-weight: 600;
-                        cursor: pointer;
-                        font-size: 1rem;
-                        transition: transform 0.2s ease;
-                    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <span>Schedule My Demo</span>
-                        <i class="fas fa-calendar" style="margin-left: 8px;"></i>
-                    </button>
-                    
-                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #666; text-align: center;">
-                        We'll contact you within 24 hours to schedule your personalized demo
-                    </p>
-                </form>
-            </div>
-        </div>
-    `;
-    
-    const modalDiv = document.createElement('div');
-    modalDiv.innerHTML = modalHTML;
-    const modal = modalDiv.firstElementChild;
-    
-    // Close modal functionality
-    const closeBtn = modal.querySelector('.modal-close');
-    const overlay = modal;
-    
-    closeBtn.addEventListener('click', () => modal.remove());
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) modal.remove();
-    });
-    
-    // Form submission to Google Forms
-    const form = modal.querySelector('.demo-form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        // Show loading state
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-        submitBtn.disabled = true;
-        
-        try {
-            // Submit to Google Forms
-            await submitToGoogleForms(data);
-            
-            // Show success message
-            modal.innerHTML = `
-                <div style="padding: 3rem; text-align: center; background: white; border-radius: 16px;">
-                    <div style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;">✅</div>
-                    <h3 style="color: #333; margin-bottom: 1rem;">Demo Request Submitted!</h3>
-                    <p style="color: #666; margin-bottom: 2rem; line-height: 1.5;">
-                        Thank you for your interest in TableTurnr! We'll contact you within 24 hours to schedule your personalized demo.
-                    </p>
-                    <button onclick="this.closest('.modal-overlay').remove()" style="
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                        color: white;
-                        padding: 12px 24px;
-                        border: none;
-                        border-radius: 8px;
-                        font-weight: 500;
-                        cursor: pointer;
-                        font-size: 1rem;
-                    ">Close</button>
-                </div>
-            `;
-            
-        } catch (error) {
-            console.error('Form submission error:', error);
-            
-            // Reset button and show error
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            
-            alert('There was an error submitting your request. Please try again or contact us directly.');
-        }
-    });
-    
-    return modal;
-}
-
-// Function to submit data to Google Forms
-async function submitToGoogleForms(data) {
-    // Your actual Google Forms URL
-    const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfXBm8cC0y8lGNiJ0dJqZKXdVGH6N4bKgYDZcKhxvCsqFH0Nw/formResponse';
-    
-    try {
-        // Create form data for Google Forms submission
-        const googleFormData = new FormData();
-        
-        // Map form data to Google Forms fields (you'll need to update these entry IDs)
-        // To get correct entry IDs: View page source of your form and search for "entry."
-        googleFormData.append('entry.123456789', data.restaurant_name || ''); // Restaurant Name
-        googleFormData.append('entry.987654321', data.contact_name || '');    // Contact Name  
-        googleFormData.append('entry.555666777', data.email || '');          // Email
-        googleFormData.append('entry.111222333', data.phone || '');          // Phone
-        googleFormData.append('entry.444555666', data.locations || '');      // Locations
-        googleFormData.append('entry.777888999', data.revenue || '');        // Revenue
-        googleFormData.append('entry.000111222', data.challenge || '');      // Challenge
-        
-        // Submit to Google Forms
-        await fetch(GOOGLE_FORMS_URL, {
-            method: 'POST',
-            body: googleFormData,
-            mode: 'no-cors' // Required for Google Forms
-        });
-        
-        // Send email notification to chandan.dce07@gmail.com
-        await sendEmailNotification(data);
-        
-    } catch (error) {
-        console.warn('Google Forms submission failed:', error);
-        // Continue anyway - we still have localStorage backup
-    }
-    
-    // Always save to localStorage as backup
-    const leads = JSON.parse(localStorage.getItem('tableturner_leads') || '[]');
-    leads.push({
-        ...data,
-        timestamp: new Date().toISOString(),
-        id: Date.now()
-    });
-    localStorage.setItem('tableturner_leads', JSON.stringify(leads));
-}
-
-// Function to send email notification
-async function sendEmailNotification(data) {
-    // Email webhook URL (you'll need to set this up with Google Apps Script)
-    const EMAIL_WEBHOOK_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-    
-    try {
-        await fetch(EMAIL_WEBHOOK_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                to: 'chandan.dce07@gmail.com',
-                subject: `🚨 New TableTurnr Demo Request - ${data.restaurant_name}`,
-                restaurant_name: data.restaurant_name,
-                contact_name: data.contact_name,
-                email: data.email,
-                phone: data.phone,
-                locations: data.locations,
-                revenue: data.revenue,
-                challenge: data.challenge,
-                timestamp: new Date().toISOString()
-            })
-        });
-    } catch (error) {
-        console.warn('Email notification failed:', error);
-        // Don't throw error - form submission should still succeed
-    }
-}
-
-// Legacy function for backwards compatibility
-function createModal() {
-    return createDemoModal();
-}
+// Legacy Google Forms functions removed - now using Calendly integration
 
 // Scroll animations
 const observerOptions = {
