@@ -3007,19 +3007,24 @@ p {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 30px;
     margin-top: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .team-member {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     background: white;
-    padding: 30px;
+    padding: 35px;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
+    align-items: flex-start;
+    min-height: 280px;
 }
 
 .team-member:hover {
@@ -3029,11 +3034,27 @@ p {
 
 .member-photo {
     flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.member-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.member-photo img:hover {
+    border-color: #667eea;
+    transform: scale(1.05);
 }
 
 .photo-placeholder {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 50%;
     display: flex;
@@ -3043,24 +3064,29 @@ p {
     font-size: 2rem;
 }
 
+.member-info {
+    flex: 1;
+}
+
 .member-info h3 {
-    margin: 0 0 5px 0;
+    margin: 0 0 8px 0;
     color: #1a1a1a;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
 .member-title {
     color: #667eea;
     font-weight: 600;
-    margin: 0 0 15px 0;
-    font-size: 1rem;
+    margin: 0 0 20px 0;
+    font-size: 1.1rem;
 }
 
 .member-bio {
     color: #666;
     line-height: 1.6;
     margin: 0 0 20px 0;
+    font-size: 0.92rem;
 }
 
 .member-links {
